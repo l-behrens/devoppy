@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cp /root/templates/Makefile_python $PWD/Makefile

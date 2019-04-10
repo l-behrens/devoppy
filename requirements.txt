@@ -1,0 +1,2 @@
+pyscaffold==3.1
+setuptools==41.0.0
