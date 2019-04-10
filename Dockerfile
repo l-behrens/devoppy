@@ -15,9 +15,17 @@ COPY requirements.txt ./
 RUN pip3 install --upgrade pip
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+ARG UNAME=testuser
+ARG UID=1000
+ARG GID=1000
+RUN groupadd -g $GID -o $UNAME
+RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
+
 COPY root /root
 RUN chmod 400 /root/.ssh/id_rsa
+RUN chown -R $UNAME /root
 
+USER $UNAME
 ENV PATH="/root/scripts:${PATH}"
 ENTRYPOINT [""]
 CMD ["/bin/bash"]

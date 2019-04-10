@@ -59,6 +59,13 @@ T(){
         "$EXEC"
 }
 
+devc_build(){
+  docker build --build-arg UID=$(id -u) \
+          --build-arg GID=$(id -g) \
+	  --build-arg UNAME=$(echo $USER)
+          -f Dockerfile -t devoppy .
+  }
+
 #PY(){
 # docker run -v /etc/localtime:/etc/localtime \
 #        -v /etc/passwd:/etc/passwd \
