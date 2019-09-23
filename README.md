@@ -8,7 +8,7 @@ Having a working status of your scripts or application should be enough to hand 
 
 Advantages:
 * Automatable
-* Reproducable
+* Reproducible
 * Fixation of Project Dependencies
 
 Supported OS
